@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+html {
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.logo{
+    background-image: url('../public/images/photo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.first-section {
+    background-image: url('../public/images/machine-learning-cybersecurity-1.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.glass-morph {
+    backdrop-filter: blur(13px) saturate(200%);
+    -webkit-backdrop-filter: blur(13px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.43);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.society-name {
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 4px;
+    color: transparent;
+    background: linear-gradient(45deg,rgb(4, 255, 4), white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-size: 0;
+    background-repeat: no-repeat;
+    animation: logo 15s ease-in-out infinite;
+    -webkit-animation: logo 15s ease-in-out infinite;
+}
+
+@keyframes logo {
+    0% {
+        -webkit-text-stroke-color: transparent;
+        background-size: 0;
+    }
+
+    25% {
+        -webkit-text-stroke-color: transparent;
+        background-size: 100%;
+    }
+
+    50% {
+        -webkit-text-stroke-color: transparent;
+        background-size: 0%;
+    }
+
+    75% {
+        -webkit-text-stroke-color: white;
+        background-size: 0%;
+    }
+    100% {
+        -webkit-text-stroke-color: transparent;
+        background-size: 0%;
+    }
+
+}
+
+.changing-text {
+    animation: blink 500ms linear infinite;
+}
+
+@keyframes blink {
+    from {
+        border-right: 3px green solid;
+    }
+
+    to {
+        border-right: 3px transparent solid;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 16px;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.swiper-pagination-bullet {
+    background-color: aqua;
+    width: 10px;
+    height: 10px;
+    transition: all 500ms;
+    padding: 0;
+    margin: 0 !important;
+}
+
+.swiper-pagination-bullet-active {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+}
+
+.swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-shadow:hover {
+    -webkit-box-shadow: inset 2px 3px 4px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 2px 3px 4px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 2px 3px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.news-container{
+    background-image: url('../public/images/big-data-resized.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projects-container{
+    background-image: url('../public/images/4EF9526D-B554-3244-558B3BED15DEEF82.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.project-container:hover img{
+    scale: 1.15;
+}
+
+.footer-logo{
+    background-image: url('../public/images/photo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.faq-page{
+    background-image: url('../public/images/query.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.query-text{
+    font-family: 'Lobster', sans-serif;
+}
+
+.work-button{
+    background-color: white !important;
+    color: black;
+}
+
+.profile-card{
+    border-radius: 5px !important;
+}
+.profile-card:hover .team-member-contact{
+    opacity: 1;
+}
+
+.h-screen{
+    min-height: 800px;
+    max-height: 100vh;
+}
+
+.bg-clip-text{
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
+.mission-design{
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-size: 0;
+    background-repeat: no-repeat;
+}
