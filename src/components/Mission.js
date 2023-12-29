@@ -21,7 +21,7 @@ const Mission = () => {
           {/* <h1 className='text-black py-4 text-[30px] text-center italic query-text'>Our Mission</h1> */}
           <div className='relative'>
           {/* <div style={{backgroundSize: scrollYProgress.current*100 + '%'}} className='lg:text-[50px] m-auto lg:w-3/4 text-[35px] bg-gradient-to-r from-sky-400 to-sky-400 mission-design text-center absolute inset-0 h-full w-full'>To be the global open community that power secure software through education, tools and collaboration.</div> */}
-          <p className='lg:text-[40px] m-auto text-[35px] text-white text-center lg:w-3/4 w-full'>OWASP Chapter MANIT, your gateway to the exciting world of cybersecurity! At NIT Bhopal, we explore cutting-edge topics like network security, ethical hacking, and more. Don't miss out on the chance to enhance your cybersecurity skills, connect with like-minded enthusiasts, and stay updated with the latest trends. Join us today and let's secure the digital world together!</p>
+          <p className='lg:text-[40px] m-auto text-[35px] text-white text-center lg:w-3/4 w-full'>OWASP Chapter MANIT, your gateway to the exciting world of cybersecurity! At NIT Bhopal, we explore cutting-edge topics like network security, ethical hacking, and more.</p>
           </div>
         </div>
       </div>
