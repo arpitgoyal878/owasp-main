@@ -58,12 +58,14 @@ const Team = () => {
                 <div className="team-member-contact absolute inset-0 h-full opacity-0  w-full flex justify-between items-end p-2 transition-all duration-500 ease-in-out z-10 bg-gray-900 bg-opacity-80">
                   <a
                     href="https://www.instagram.com/_gautampratap/"
+                    target="_blank"
                     className="p-2 bg-white rounded-lg cursor-pointer"
                   >
                     <BsInstagram className="text-xl text-pink-600" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/gautampratap/"
+                    target="_blank"
                     className="p-2 bg-white rounded-lg cursor-pointer"
                   >
                     <FaLinkedinIn className="text-xl fill-sky-600" />
@@ -89,12 +91,14 @@ const Team = () => {
                 <div className="team-member-contact absolute inset-0 h-full opacity-0  w-full flex justify-between items-end p-2 transition-all duration-500 ease-in-out z-10 bg-gray-900 bg-opacity-80">
                   <a
                     href="https://www.instagram.com/_gautampratap/"
+                    target="_blank"
                     className="p-2 bg-white rounded-lg cursor-pointer"
                   >
                     <BsInstagram className="text-xl text-pink-600" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/gautampratap/"
+                    target="_blank"
                     className="p-2 bg-white rounded-lg cursor-pointer"
                   >
                     <FaLinkedinIn className="text-xl fill-sky-600" />

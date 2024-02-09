@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import NewsData from "../data/NewsData";
 import { useInView } from "framer-motion";
 
 function Section({ children }) {
@@ -21,6 +20,22 @@ function Section({ children }) {
     </section>
   );
 }
+var requestOptions = {
+  method: "GET",
+};
+
+var query_params = {
+  source: "bbc-news",
+  sortBy: "top",
+  apiKey: "8b38737bb91047ae9e7bd2dec042203e",
+};
+
+var esc = encodeURIComponent;
+var query = Object.keys(query_params)
+  .map(function (k) {
+    return esc(k) + "=" + esc(query_params[k]);
+  })
+  .join("&");
 
 const News = () => {
   const [newsData, setNewsData] = useState([]);
@@ -28,19 +43,17 @@ const News = () => {
   useEffect(() => {
     const handleFetchNewsData = async () => {
       const response = await fetch(
-        "https://cyber-security-news.p.rapidapi.com/news/latimes",
-        {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key":
-              "96ffa602c6mshff2a54e2d1209b5p1ed2f3jsn714140643723",
-            "X-RapidAPI-Host": "cyber-security-news.p.rapidapi.com",
-          },
-        }
+        "https://newsapi.org/v1/articles?" + query,
+        requestOptions
       );
       const data = await response.json();
-      console.log(data);
-      setNewsData(data);
+      const articles = data.articles.map((article) => {
+        const { title, description, author,url } = article;
+        console.log(author);
+        return { title, description, author, url };
+      });
+      console.log(articles);
+      setNewsData(articles);
     };
     handleFetchNewsData();
   }, []);
@@ -60,27 +73,27 @@ const News = () => {
             : "h-[95%] w-[95%] glass-morph p-6 overflow-y-scroll scroll-bar"
         }
       >
-        {/* {newsData &&
+        {newsData &&
           newsData.map((item) => {
             return (
               <Section>
                 <div className="news border-b-[1px] border-white py-2 mb-4 text-white">
                   <div className="text-sm italic text-red-500">
-                    {item.source}
+                    {item.author}
                   </div>
                   <h2 className="text-sm font-semibold">{item.title}</h2>
                   <div className="flex gap-2">
                     <p className=" whitespace-nowrap text-sm w-full overflow-hidden">
-                      {item.url}
+                      {item.description}
                     </p>
-                    <span className="text-sm text-red-500 whitespace-nowrap italic">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm text-red-500 whitespace-nowrap italic">
                       Read More
-                    </span>
+                    </a>
                   </div>
                 </div>
               </Section>
             );
-          })} */}
+          })}
       </div>
     </div>
   );
