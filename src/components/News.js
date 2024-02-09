@@ -25,9 +25,9 @@ var requestOptions = {
 };
 
 var query_params = {
-  source: "bbc-news",
-  sortBy: "top",
-  apiKey: "8b38737bb91047ae9e7bd2dec042203e",
+  q: "Cyber security",
+  lang: "en",
+  apikey: "3b4daf8d9ff0e2df9c8ce52ab2211357",
 };
 
 var esc = encodeURIComponent;
@@ -43,14 +43,14 @@ const News = () => {
   useEffect(() => {
     const handleFetchNewsData = async () => {
       const response = await fetch(
-        "https://newsapi.org/v1/articles?" + query,
+        "https://gnews.io/api/v4/search?" + query,
         requestOptions
       );
       const data = await response.json();
       const articles = data.articles.map((article) => {
-        const { title, description, author,url } = article;
-        console.log(author);
-        return { title, description, author, url };
+        const { title, description, source, url, content } = article;
+
+        return { title, description, source, url, content };
       });
       console.log(articles);
       setNewsData(articles);
@@ -79,14 +79,19 @@ const News = () => {
               <Section>
                 <div className="news border-b-[1px] border-white py-2 mb-4 text-white">
                   <div className="text-sm italic text-red-500">
-                    {item.author}
+                    {item.title}
                   </div>
-                  <h2 className="text-sm font-semibold">{item.title}</h2>
+                  <h2 className="text-sm font-semibold">{item.description}</h2>
                   <div className="flex gap-2">
                     <p className=" whitespace-nowrap text-sm w-full overflow-hidden">
-                      {item.description}
+                      {item.content}
                     </p>
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm text-red-500 whitespace-nowrap italic">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-red-500 whitespace-nowrap italic"
+                    >
                       Read More
                     </a>
                   </div>
